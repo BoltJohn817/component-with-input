@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 40px;
+}
+
+.example {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+}
+
+.target-component {
+  border: 1px solid black;
+}

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { formatDate } from "./utils";
 
 interface IComponentProps {
-  input: boolean | string | object | number | undefined | null;
+  input: any;
 }
 
 const ComponentWithInput = ({ input }: IComponentProps) => {
@@ -22,7 +22,7 @@ const ComponentWithInput = ({ input }: IComponentProps) => {
     };
   }, [input]);
 
-  const renderArray = (array: Array<object>) => (
+  const renderArray = (array: Array<Record<string, unknown>>) => (
     <ul>
       {array.map((item, index) => (
         <li key={`item-${index}`}> {JSON.stringify(item)} </li>

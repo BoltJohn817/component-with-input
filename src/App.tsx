@@ -6,7 +6,7 @@ const arrayData = ["First One", "Second One", "Third One", "Four One"];
 const numberData = 1234567;
 const stringData = "Test the component";
 
-export default function App() {
+export default function App(): JSX.Element | null{
   return (
     <div className="App">
       <h1>Component with `input` props</h1>

@@ -1,12 +1,12 @@
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { formatDate } from "./utils";
 
 interface IComponentProps {
-  input: any;
+  input: boolean | string | object | number | undefined | null;
 }
 
 const ComponentWithInput = ({ input }: IComponentProps) => {
-  const timerId = useRef<number>();
+  const timerId = useRef<ReturnType<typeof setInterval>>();
   const [currentDate, setCurrentDate] = useState(new Date());
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const ComponentWithInput = ({ input }: IComponentProps) => {
     };
   }, [input]);
 
-  const renderArray = (array: Array<any>) => (
+  const renderArray = (array: Array<object>) => (
     <ul>
       {array.map((item, index) => (
         <li key={`item-${index}`}> {JSON.stringify(item)} </li>

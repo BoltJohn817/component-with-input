@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { formatDate } from "./utils";
 
 interface IComponentProps {
-  input: any;
+  input: unknown;
 }
 
-const ComponentWithInput = ({ input }: IComponentProps) => {
+const ComponentWithInput = ({ input }: IComponentProps): JSX.Element | null => {
   const timerId = useRef<ReturnType<typeof setInterval>>();
   const [currentDate, setCurrentDate] = useState(new Date());
 

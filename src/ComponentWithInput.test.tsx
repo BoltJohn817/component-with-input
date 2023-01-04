@@ -1,9 +1,10 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import ComponentWithInput from "./ComponentWithIput";
 import { formatDate } from "./utils";
 import "@testing-library/jest-dom";
 
-const tick = () => new Promise((res) => setImmediate(res));
+// const tick = () => new Promise((res) => setImmediate(res));
 
 describe("Test component with input", () => {
   describe("Test component with falsy value", () => {
@@ -21,7 +22,7 @@ describe("Test component with input", () => {
       const element = screen.getByTestId("component-with-input");
 
       const prevDate = new Date();
-      await jest.advanceTimersByTime(3000);
+      jest.advanceTimersByTime(3000);
       const newDate = new Date();
       const data = element.innerHTML;
       expect(data).not.toEqual(formatDate(prevDate));
